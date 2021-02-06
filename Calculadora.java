@@ -4,17 +4,21 @@ Carnet: 20009
 Clase: Estructuras de datos.
 Tarea: Calculadora generica
 */
-public class Calculadora implements CalculadoraGeneral{
+public class Calculadora implements CalculadoraGeneral
+{
     
     public StackVector<Integer> data;
     //Método postfix para obtener el resultado
-    public String calculo(String aString) {
+    public String calculo(String aString) 
+    {
         int b = 0;
         int a = 0;
         data = new StackVector<Integer>();
         char ch[] = aString.toCharArray();
-        for(char i: ch) {
-            if( i <= '9' && i >= '0' ) {
+        for(char i: ch) 
+        {
+            if( i <= '9' && i >= '0' ) 
+            {
               data.push((Integer)(i - '0'));
             } 
             //De lo contrario
@@ -38,7 +42,7 @@ public class Calculadora implements CalculadoraGeneral{
                 break;
               }
             }
-          }
+        }
 
         return String.valueOf(data.pop());
     }
